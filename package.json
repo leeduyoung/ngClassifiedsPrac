@@ -1,0 +1,26 @@
+{
+  "name": "ng-classifieds",
+  "version": "1.0.0",
+  "description": "ng-classifieds practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeduyoung/ngClassifiedsPrac.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeduyoung/ngClassifiedsPrac/issues"
+  },
+  "homepage": "https://github.com/leeduyoung/ngClassifiedsPrac#readme",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-aria": "^1.5.7",
+    "angular-material": "^1.1.0-rc.5",
+    "mdi": "^1.6.50"
+  }
+}
