@@ -25,17 +25,44 @@
         </div>
     </md-toolbar>
 
+    <!--ng-show & ng-hide-->
+    <!--<button ng-click="showName = true">showName</button>
+    <button ng-click="showName = false">hideName</button>
+    <p ng-show="showName">Hello, world!!!</p>
+    <p ng-hide="showName">Hello, hide the world!!!</p>-->
+
     <md-content class="md-padding" layout="row" layout-wrap>
         <md-card ng-repeat="classified in classifieds" flex="30">
             <img ng-src="{{ classified.image }}" alt="">
             <md-card-content>
-                <div class="classified-info">
+                <div class="classified-info" ng-show="!showContact">
                     <h2 class="md-title">{{classified.title}}</h2>
                     <h3>{{classified.posted | date:'yyyy-MM-dd HH:mm:ss'}}</h3>
                     <h3>{{classified.price | currency}}</h3>
                     <p>{{classified.description}}</p>
                     <!--<pre>{{classified | json}}</pre>-->
                 </div>
+
+                <div class="classified-info" ng-show="showContact">
+                    <p><md-icon class="mdi mdi-account"></md-icon>{{classified.contact.name}}</p>
+                    <p><md-icon class="mdi mdi-phone"></md-icon>{{classified.contact.phone}}</p>
+                    <p><md-icon class="mdi mdi-email"></md-icon>{{classified.contact.email}}</p>
+                </div>
+
+                <div layout="row">
+                    <md-button ng-click="showContact = true" ng-show="!showContact">CONTACT</md-button>
+                    <md-button ng-click="showContact = false" ng-show="showContact">DETAILS</md-button>
+                    <md-button ng-click="showAdmin = true" ng-show="!showAdmin">ADMIN</md-button>
+                    <md-button ng-click="showAdmin = false" ng-show="showAdmin">CLOSE</md-button>
+                </div>
+
+                <div ng-show="showAdmin">
+                    <h3>Admin</h3>
+                    <md-button class="md-primary">Edit</md-button>
+                    <md-button class="md-warn">Delete</md-button>
+                </div>
+
+                
             </md-card-content>
         </md-card>
     </md-content>
